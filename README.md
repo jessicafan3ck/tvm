@@ -1,16 +1,4 @@
-      [Image]
-                ↓
-      [Objective Features]
-                ↓
-      [Symbolic Features (Tier 1)]
-                ↓
-      [Compositional Description (Tier 2)]
-                ↓
-      [Vibe Atom Sentiment (Tier 0)]
-                ↓
-      [Mapped into Cultural Aesthetic (Tier 3)]
-                ↓
-      [Grouped under Archetypal Theme (Tier 4)]
+<img width="650" alt="Screenshot 2025-04-11 at 4 54 14 PM" src="https://github.com/user-attachments/assets/72bc8242-2525-414b-8bcd-75522814c13e" />
 
 
 Bidirectional -> mapping back to any other search/recommendation system: because each photo is also associated with a for example creator, we could allow for any tier to be mapped back to a specific image (or set of images) and then utilize that to identify certain creators/posts that fit this vibe.
