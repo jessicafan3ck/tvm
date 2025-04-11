@@ -16,6 +16,7 @@
 Bidirectional -> mapping back to any other search/recommendation system: because each photo is also associated with a for example creator, we could allow for any tier to be mapped back to a specific image (or set of images) and then utilize that to identify certain creators/posts that fit this vibe.
 
 Base Model
+
 Comprehensive dictionary of baseline tier 0 vocabulary.
 Create tier 1-4 derivatives and run Pintrest search -> create pictorial database. (100 images per query)
 Extract OpenCV/PIL based factors for each image
