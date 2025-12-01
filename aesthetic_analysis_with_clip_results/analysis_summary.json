@@ -1,0 +1,78 @@
+{
+  "modifiers": [
+    "candid",
+    "ethereal",
+    "haunted",
+    "introspective",
+    "melancholic",
+    "nostalgic",
+    "radiant",
+    "romantic",
+    "whimsical"
+  ],
+  "clustering_results": {
+    "f_obj": {
+      "optimal_k": 2,
+      "silhouette": 0.3496455858381272,
+      "davies_bouldin": 0.4273907716978029,
+      "calinski_harabasz": 4.07020503399433,
+      "groups": {
+        "0": [
+          "candid",
+          "ethereal",
+          "haunted",
+          "introspective",
+          "melancholic",
+          "nostalgic",
+          "radiant",
+          "romantic"
+        ],
+        "1": [
+          "whimsical"
+        ]
+      }
+    },
+    "f_sem": {
+      "optimal_k": 2,
+      "silhouette": 0.0543232262134552,
+      "davies_bouldin": 1.722256710691298,
+      "calinski_harabasz": 1.3828153610229492,
+      "groups": {
+        "1": [
+          "candid",
+          "haunted",
+          "introspective",
+          "melancholic",
+          "nostalgic",
+          "romantic",
+          "whimsical"
+        ],
+        "0": [
+          "ethereal",
+          "radiant"
+        ]
+      }
+    },
+    "combined": {
+      "optimal_k": 2,
+      "silhouette": 0.04817180441323908,
+      "davies_bouldin": 1.7365812962574436,
+      "calinski_harabasz": 1.3432367484143304,
+      "groups": {
+        "1": [
+          "candid",
+          "haunted",
+          "introspective",
+          "melancholic",
+          "nostalgic",
+          "romantic",
+          "whimsical"
+        ],
+        "0": [
+          "ethereal",
+          "radiant"
+        ]
+      }
+    }
+  }
+}
