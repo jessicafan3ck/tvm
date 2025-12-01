@@ -1,0 +1,4 @@
+,reconstruction_error,distance_correlation
+pca,5.65921884693174e-13,
+umap,,0.8458062359569243
+tsne,,0.7078128267407658
