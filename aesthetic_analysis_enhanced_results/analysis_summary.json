@@ -1,0 +1,98 @@
+{
+  "feature_importance": {
+    "geometric_structural": 0.09999995842392975,
+    "spatial_layout": 3.9305313673520264e-08,
+    "contrast_color": 1.7392384734993277e-08,
+    "motion_dynamics": 4.2287559289021366e-09,
+    "pattern_rhythm": 1.8068928415442263e-09,
+    "visual_mass_focus": 2.654138023455176e-10,
+    "framing_breathing": 1.5394343707674095e-20
+  },
+  "semantic_embeddings_available": false,
+  "pca_variance_explained": 0.9999999999999997,
+  "modifier_dispersion": {
+    "candid": {
+      "std_across_subjects": 869.864667676016,
+      "n_subjects": 354,
+      "feature_variance": 138.1923301283458
+    },
+    "ethereal": {
+      "std_across_subjects": 628.9547613438632,
+      "n_subjects": 476,
+      "feature_variance": 100.90729022523955
+    },
+    "haunted": {
+      "std_across_subjects": 405.6820126101682,
+      "n_subjects": 440,
+      "feature_variance": 66.70026828433204
+    },
+    "introspective": {
+      "std_across_subjects": 870.7147209008102,
+      "n_subjects": 421,
+      "feature_variance": 140.0545779442034
+    },
+    "melancholic": {
+      "std_across_subjects": 564.5356020441067,
+      "n_subjects": 883,
+      "feature_variance": 95.29829830031227
+    },
+    "nostalgic": {
+      "std_across_subjects": 1174.7901151608526,
+      "n_subjects": 525,
+      "feature_variance": 185.17588618287377
+    },
+    "radiant": {
+      "std_across_subjects": 622.7345458843891,
+      "n_subjects": 716,
+      "feature_variance": 100.59812271173438
+    },
+    "romantic": {
+      "std_across_subjects": 201.952622198937,
+      "n_subjects": 1048,
+      "feature_variance": 34.66033759350269
+    },
+    "whimsical": {
+      "std_across_subjects": 844.7488972882256,
+      "n_subjects": 131,
+      "feature_variance": 134.1610925682001
+    }
+  },
+  "subject_modifier_interaction": {
+    "total_variance": 454118.4302552211,
+    "within_modifier_variance": 546220.7543125026,
+    "between_modifier_variance": -92102.32405728148,
+    "modifier_variance_ratio": -0.20281564878465438,
+    "subject_variance_ratio": 1.2028156487846544
+  },
+  "sentiment_groups": {
+    "n_sentiment_groups": 2,
+    "groups": {
+      "0": [
+        "candid",
+        "ethereal",
+        "haunted",
+        "introspective",
+        "melancholic",
+        "nostalgic",
+        "radiant",
+        "romantic"
+      ],
+      "1": [
+        "whimsical"
+      ]
+    },
+    "group_sizes": {
+      "0": 8,
+      "1": 1
+    }
+  },
+  "summary": {
+    "total_samples": 4994,
+    "n_modifiers": 9,
+    "n_sentiment_groups": 2,
+    "modifier_variance_ratio": -0.20281564878465438,
+    "subject_variance_ratio": 1.2028156487846544,
+    "optimal_sentiment_k": 2,
+    "sentiment_silhouette": 0.3496455858381272
+  }
+}
