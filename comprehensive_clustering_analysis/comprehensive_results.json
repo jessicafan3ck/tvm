@@ -1,0 +1,111 @@
+{
+  "total_samples": 4994,
+  "cluster_0_size": 4964,
+  "cluster_1_size": 30,
+  "k2_metrics": {
+    "silhouette": 0.9943135898165911,
+    "davies_bouldin": 0.15592446830518517,
+    "calinski_harabasz": 56858.39185076461
+  },
+  "top_10_distinguishing_features": [
+    {
+      "feature": "spatial_layout_subject_isolation",
+      "difference": 12.411884086298201,
+      "cluster_0_mean": 0.0998908714791702,
+      "cluster_1_mean": 0.013931400786170646
+    },
+    {
+      "feature": "framing_breathing_breathing_space_mean_margin",
+      "difference": 1.3645375887076139,
+      "cluster_0_mean": 0.32986246624574206,
+      "cluster_1_mean": 0.18028303208512278
+    },
+    {
+      "feature": "contrast_color_highlight_ratio",
+      "difference": 1.1004215957583696,
+      "cluster_0_mean": 0.08140217969035018,
+      "cluster_1_mean": 0.21672721256812413
+    },
+    {
+      "feature": "motion_dynamics_direction_strength",
+      "difference": 0.9229686611822184,
+      "cluster_0_mean": 0.12145883759086164,
+      "cluster_1_mean": 0.22105520048381647
+    },
+    {
+      "feature": "framing_breathing_breathing_space_left",
+      "difference": 0.8050963900557851,
+      "cluster_0_mean": 0.2905210625346749,
+      "cluster_1_mean": 0.07923094820381828
+    },
+    {
+      "feature": "framing_breathing_breathing_space_right",
+      "difference": 0.7917620529089285,
+      "cluster_0_mean": 0.3001087388529392,
+      "cluster_1_mean": 0.08932223183538707
+    },
+    {
+      "feature": "spatial_layout_depth_of_field_blur_gradient_strength",
+      "difference": 0.6811171248723286,
+      "cluster_0_mean": 420.1468762642826,
+      "cluster_1_mean": 1027.4604398406925
+    },
+    {
+      "feature": "framing_breathing_breathing_space_top",
+      "difference": 0.5539752196397713,
+      "cluster_0_mean": 0.3089700685900518,
+      "cluster_1_mean": 0.15276192798379784
+    },
+    {
+      "feature": "contrast_color_mean_contrast",
+      "difference": 0.5459089753386618,
+      "cluster_0_mean": 19.070368356564465,
+      "cluster_1_mean": 23.675515333811443
+    },
+    {
+      "feature": "contrast_color_warm_color_ratio",
+      "difference": 0.5028721330871461,
+      "cluster_0_mean": 0.44558347951042865,
+      "cluster_1_mean": 0.2643440735434639
+    }
+  ],
+  "cluster_0_modifiers": {
+    "romantic": 1047,
+    "melancholic": 879,
+    "radiant": 713,
+    "nostalgic": 515,
+    "ethereal": 473,
+    "haunted": 439,
+    "introspective": 417,
+    "candid": 351,
+    "whimsical": 130
+  },
+  "cluster_1_modifiers": {
+    "nostalgic": 10,
+    "melancholic": 4,
+    "introspective": 4,
+    "candid": 3,
+    "ethereal": 3,
+    "radiant": 3,
+    "whimsical": 1,
+    "haunted": 1,
+    "romantic": 1
+  },
+  "cluster_0_only_analysis": {
+    "optimal_k": 2,
+    "silhouette_scores": {
+      "2": 0.9907207926203885,
+      "3": 0.9849565539490412,
+      "4": 0.971343596045026,
+      "5": 0.9657982260806748,
+      "6": 0.9660709547927282
+    },
+    "davies_bouldin_scores": {
+      "2": 0.3076997694446142,
+      "3": 0.30639707108160047,
+      "4": 0.4261808795619166,
+      "5": 0.41536222524267813,
+      "6": 0.3364405852066524
+    }
+  }
+}
