@@ -1,5 +1,5 @@
 {
-  "your_data": {
+  "curated_data": {
     "samples": 4994,
     "categories": 9,
     "optimal_k": 2,
