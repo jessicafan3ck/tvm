@@ -1,10 +1,10 @@
-# TVM Aesthetic Latent Space Analysis
+# Tiered Vibe Mapping (TVM): A Feature-Space Decomposition for Aesthetic Modeling
 
 A comprehensive Python framework for clustering, dimensionality reduction, and analysis of visual aesthetic sentiment across a dynamic latent space. Decomposes aesthetic nuance using interpretable objective features and validates reliable reconstruction through multimodal embeddings.
 
 ##  Overview
 
-This project implements an end-to-end pipeline for understanding visual aesthetics through the lens of latent space decomposition. Given a dataset of 5,060 images annotated across 26 aesthetic modifiers and 24 subject categories, the pipeline:
+This project implements an end-to-end pipeline for understanding visual aesthetics through the lens of latent space decomposition. Given a dataset of 4,994 images annotated across 9 aesthetic modifiers and 24 subject categories, the pipeline:
 
 1. **Extracts objective visual features** (F_obj) from geometric, spatial, color, and compositional dimensions
 2. **Applies dimensionality reduction** using PCA, UMAP, and t-SNE
@@ -23,24 +23,6 @@ This project implements an end-to-end pipeline for understanding visual aestheti
 - **Subject Categories**: 24 unique subjects
 - **Per Pairing**: ~30 images per modifier-subject combination (ranged from 1 - 50)
 - **Feature Extraction**: 7 categories of visual features (~120 total dimensions)
-
-## 📂 Project Structure
-
-```
-tvm/
-├── aesthetic_analysis_pipeline.py    # Core implementation (7 classes, 40+ methods)
-├── clustering.py                      # Clustering variants (K-means, Hierarchical, DBSCAN)
-├── aesthetic_analysis_with_labels.py # Label-aware analysis (if modifier/subject labels available)
-├── comprehensive_clustering_analysis.py  # Advanced clustering analysis
-├── cross_dataset_analysis.py          # Cross-dataset validation
-├── unsupervised_clustering_results/   # Results from unsupervised clustering
-├── aesthetic_analysis_results/        # Results from full pipeline
-├── aesthetic_analysis_enhanced_results/  # Enhanced pipeline results
-├── aesthetic_analysis_with_clip_results/ # Multimodal (CLIP) integration
-└── data/
-    ├── TVM_JSON.zip                   # Archived feature data json extraction
-    └── BENCHMARK_JSON.zip             # Benchmark dataset json extraction
-```
 
 ##  Model Architecture
 
