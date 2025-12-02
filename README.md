@@ -14,7 +14,7 @@ This project implements an end-to-end pipeline for understanding visual aestheti
 
 ## Central Research Question
 
-**Can visual aesthetic sentiment and nuance be reliably decomposed and reconstructed across a dynamic aesthetic latent space using an interaction between interpretable objective features and learned multimodal embeddings?**
+**Is aesthetic sentiment encoded in objective visual features, or does it require semantic understanding beyond visual form?**
 
 ## Dataset
 
