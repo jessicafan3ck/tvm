@@ -134,6 +134,62 @@ Composition handles color/tonal vibes (radiant, melancholic); semantic vision is
 for relational vibes (candid, whimsical, romantic); the subjective one (introspective)
 resists every backbone.
 
+### 8. Scraped 30-vibe corpus (weak tier) — external validity, ontology, label noise
+(`embed_scraped.py`, `analyze_scraped.py`, `confidence_filter.py`)
+
+Independent Pinterest-scraped corpus: ~143k images / ~15k folders over **30 aesthetic
+adjectives** (only ethereal/melancholic/whimsical overlap the curated 9). Balanced
+sample 29,774 (≤2 imgs/folder), CLIP-B/32. Treated as WEAK tier (search-term labels).
+
+- **S1 — recoverability holds at scale.** 30-way linear probe: balanced acc 0.211 vs
+  permuted chance 0.033 (**6.4×**). Vibe is decodable on an independently-collected
+  30-class corpus → strong external validity for the core finding.
+- **S2 — data-driven vibe ontology.** Agglomerative clustering of the 30 vibe centroids
+  (cosine) yields 6 coherent super-vibes: **decay** (abandoned/cracked/forgotten/gothic/
+  overgrown), **magical/ethereal** (angelic/celestial/dreamy/enchanted/ethereal/pastel/
+  surreal/whimsical), **structural** (brutalist/futuristic), **cozy/warm** (cozy/elegant/
+  rustic/vintage), **dark-moody** (dark/eerie/foggy/melancholic/nocturnal/silent/stormy),
+  **glow** (glimmering/glowing/sun-drenched/twinkling). Progressive merge raises raw acc
+  0.211→0.371 by 8 classes; merges follow the ontology → same "residual=overlap" pattern
+  at 30 classes. This ontology is a product-ready, data-derived taxonomy.
+- **S3 — search-term labels are weak, and scraping does not replace curation.**
+  Within-source 3-class separability: **curated 0.931 vs scraped 0.543** — hand-picked
+  labels are far cleaner. Only **53.9%** of scraped images' search-term vibe is confirmed
+  by a curated-trained model (≈46% of Pinterest results don't read as the searched vibe).
+  Cross-source transfer: curated→scraped 0.545, scraped→curated 0.639.
+  **Naive augmentation HURTS** (held-out curated 0.894 → 0.798 at weight 1.0, monotone).
+  **Confidence-filtering** (keep only agreements) removes the harm (→0.887) but still does
+  not beat the curated-only baseline (0.894) — neutral, because the curated task is
+  near-ceiling and filtered scraped is redundant by construction.
+
+→ **Implications.** (a) The core result generalizes to 30 vibes / independent collection.
+(b) Scraped data's value is the *broad ontology* and *coverage of vibes with no curated
+labels* (the other 27), NOT as a label source for vibes you already curate. (c) The
+bottleneck — and the moat — is *validated human-preference labels*, not image volume:
+143k scraped images, ~half mislabeled by search term, cannot replace a few thousand
+hand-picked ones. Scraped should stay down-weighted/auxiliary and be *validated before
+use*, not trained on raw.
+
+#### S4–S6 (`fast_scraped2.py`) — the scrape is an adjective×subject grid (580 subjects × ~26 vibes each)
+- **Subject-confound: vibe is not scene leakage.** 30-vibe probe under GroupKFold by
+  subject (held-out scenes) = 0.220 vs stratified 0.211 — unchanged. Within a subject only
+  the vibe varies, and across held-out subjects vibe still decodes → pure-vibe signal.
+- **Concrete vibes scrape cleanly, abstract vibes don't.** Per-adjective recall —
+  cleanest: brutalist .63, futuristic .53, abandoned .44, gothic .36, foggy .34, celestial
+  .32 (visually concrete); noisiest: melancholic .10, glowing .10, twinkling .09, silent
+  .04, dreamy .03 (abstract/emotional). Search-term scraping works for concrete aesthetics
+  and fails for subtle/emotional ones — same axis as introspective being hardest (R5).
+- **Crosswalk: the two taxonomies agree, reproducing the collapse geometry.** Mapping each
+  curated-9 modifier to its nearest scraped-vibe centroid: haunted→eerie(.73), melancholic→
+  foggy(.84), introspective→foggy(.63)/melancholic, radiant→sun-drenched(.73), ethereal→
+  ethereal(.36), whimsical→surreal/whimsical, nostalgic→vintage/cracked, romantic→vintage,
+  candid→silent (weak/ambiguous). Independently reproduces the curated collapse (introspective
+  and melancholic both land in dark-moody) — two corpora + methods agree on the vibe geometry.
+
+→ The core finding now triangulates across **three** corpora (curated 9, benchmark 8 emotions,
+scraped 30), all subject-independent, all sharing the same overlap/ontology structure, with a
+consistent concrete-vs-abstract decodability axis.
+
 ## Corrected thesis for the paper
 > Aesthetic vibe is robustly but partially encoded in objective composition
 > (≈3–4× chance, subject-independent, generalizing across two datasets), carried
