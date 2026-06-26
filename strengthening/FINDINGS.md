@@ -186,9 +186,17 @@ use*, not trained on raw.
   candid→silent (weak/ambiguous). Independently reproduces the curated collapse (introspective
   and melancholic both land in dark-moody) — two corpora + methods agree on the vibe geometry.
 
+- **Backbone-robust (SigLIP-SO400M check, `analyze_scraped_siglip.py`).** 30-vibe accuracy
+  0.213 (SigLIP) vs 0.211 (B/32) — essentially identical, even though SigLIP lifted the
+  curated 9-vibe task (0.69→0.73). At 30 heavily-overlapping vibes a 5× stronger encoder buys
+  nothing → the ceiling is set by perceptual/label overlap, not model capacity, exactly as the
+  subjectivity thesis predicts. The 6-cluster ontology reproduces at the coarse level
+  (dark/decay-moody, magical/ethereal-glow, structural brutalist/futuristic, cozy/warm); only
+  fine boundaries shift. The macro-taxonomy is robust; fuzzy boundaries reflect real overlap.
+
 → The core finding now triangulates across **three** corpora (curated 9, benchmark 8 emotions,
 scraped 30), all subject-independent, all sharing the same overlap/ontology structure, with a
-consistent concrete-vs-abstract decodability axis.
+consistent concrete-vs-abstract decodability axis, and stable to backbone choice.
 
 ## Corrected thesis for the paper
 > Aesthetic vibe is robustly but partially encoded in objective composition
