@@ -49,3 +49,24 @@ SigLIP = B/32 at 30 vibes) — so an acquirer buys validated capability + prefer
 learnable from ~3 examples, and the labels can't be scraped (0.93 curated vs 0.54 scraped) —
 they require our curation pipeline. The remaining unknown (behavioral lift) is what a design-
 partner pilot proves."
+
+## V1 generative test — color/tone re-blend (`reblend_poc.py`, demo `reblend_demo.png`)
+Can product-safe color/tone grading move a "product" photo's vibe toward a target feed?
+Source=radiant (bright/product-like), target=melancholic (moody). CLIP-B/32, 36 grades/img.
+
+| metric | value |
+|---|---|
+| native melancholic band (cos-dist) | 0.188 |
+| radiant baseline gap | 0.246 |
+| after color grading | 0.193 (**86% of gap closed**) |
+| reached native band | 47% of images |
+| P(melancholic) before→after | 0.04 → 0.15 |
+| classifier flips to melancholic | 0% → 16% |
+
+→ Color/tone grading closes most of the *geometric* gap and visibly shifts mood while
+preserving content, but only fully converts vibe 16% of the time — because semantic content
+carries ~2× more vibe than color (consistent with R4/R5). **Two tiers:** V1 ambiance
+*harmonizer* (ships now, product-safe, soft blend) vs V2 generative scene adaptation (full
+blend, needs identity-preserving diffusion + fidelity guardrails). The interpretable feature
+space is a measurable control + audit surface for both. Caveats: radiant↔melancholic gap is
+small in CLIP space; PoC uses global grading (no foreground segmentation yet).
