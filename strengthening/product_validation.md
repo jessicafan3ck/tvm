@@ -70,3 +70,24 @@ carries ~2× more vibe than color (consistent with R4/R5). **Two tiers:** V1 amb
 blend, needs identity-preserving diffusion + fidelity guardrails). The interpretable feature
 space is a measurable control + audit surface for both. Caveats: radiant↔melancholic gap is
 small in CLIP space; PoC uses global grading (no foreground segmentation yet).
+
+## V1 sharpened + V2 generative (`reblend_v1.py`, `reblend_v2.py`)
+**V1 (color/tone, product-safe).** Multi-target (radiant→): ethereal gap-closed 51%/flip 23%,
+melancholic 80%/15%, haunted 82%/5% — color closes the geometric gap but conversion drops with
+semantic contrast. Fidelity guardrail: structure always preserved (grad-SSIM 0.93–1.0); only
+COLOR moves (ΔE 0→32) → true-color is the bounded lever, shape is never at risk. Foreground-lock
+demo: background re-vibed, product region pixel-true (ΔE=0).
+
+**V2 (SD img2img) vs V1, same images:**
+| target | method | flip | structure | colorΔE |
+|---|---|---|---|---|
+| melancholic (tonal) | V1 | 10% | 0.919 | 25.2 |
+| | V2 | 10% | 0.565 | 10.8 |
+| haunted (semantic) | V1 | 5% | 0.905 | 26.5 |
+| | V2 | **25%** | 0.557 | 10.9 |
+
+→ Tonal vibes: V2 is pure loss (same flip, structure collapses) — use V1. Semantic vibes: V2
+breaks the wall (5×) but only by changing content (structure 0.56) — for product photos that
+means the **real V2 = identity-locked generation** (segment product, regenerate background only).
+Full vibe conversion is partial (~25% max): blending in is real but soft, not invisibility.
+Demos: reblend_v1_fglock.png, reblend_v2_demo.png.
